@@ -1,0 +1,633 @@
+body {
+  background-color: rgb(10, 10, 10);
+  font-family: "Clash Display", sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+section {
+  scroll-margin-top: 100px;
+}
+
+/* Navbar */
+nav,
+.navbar-subContainer {
+  transition: 0.1s;
+  height: 80px;
+  background-color: black;
+}
+
+nav .navbar-brand {
+  left: 20px;
+}
+
+.navbar a {
+  color: white;
+}
+
+.nav-link:focus, .nav-link:hover {
+  color: #b2ffe3 !important;
+}
+
+.navbar-brand {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar-brand span {
+  font-size: 1em;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.custom-toggler {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 20px;
+  position: relative;
+}
+
+.line {
+  width: 20px;
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.line:first-child {
+  top: calc(50%);
+}
+
+.line:last-child {
+  top: calc(50%);
+}
+
+.navbar-toggler[aria-expanded="true"] .line:first-child {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .line:last-child {
+  transform: rotate(-45deg);
+}
+
+.navbar-toggler:not([aria-expanded="true"]) .line:first-child {
+  transform: translateY(-4px);
+}
+
+.navbar-toggler:not([aria-expanded="true"]) .line:last-child {
+  transform: translateY(4px);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 25px;
+  position: absolute;
+}
+
+.navbar-nav {
+  transition: 0.3s;
+  background-color: black;
+}
+
+.navbar-subContainer {
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+  align-items: center;
+}
+
+.nav-item a {
+  font-weight: 500;
+  font-size: 1em;
+}
+
+.nav-link:focus {
+  color: white;
+}
+
+/* END NAVBAR CSS */
+
+#inicioSection {
+  background-color: #171717;
+}
+
+#inicioSection,
+#cartas, #carrito, #panel, #eliminarItem, #modificarItem, #agregarItem, #modificadoItem {
+  margin-top: 80px; /* Navbar height */
+}
+
+#inicioSection h1 {
+  font-size: 3em;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
+
+#highlight1 {
+  color: #b2ffe3;
+}
+
+#highlight2 {
+  color: #e9ab7d;
+}
+
+.inicioCard span {
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+#bulbasaur {
+  background: linear-gradient(270deg, #ffffff 0%, #709d90 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#charmander {
+  background: linear-gradient(270deg, #ffffff 0%, #e9ab7d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#pikachu {
+  background: linear-gradient(270deg, #ffffff 0%, #decc78 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#squirtle {
+  background: linear-gradient(270deg, #ffffff 0%, #669fb1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pokemonsContainer {
+  gap: 120px;
+  padding: 100px 0 30px 0px;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.separator {
+  width: 60px;
+  height: 6px;
+  border-radius: 1px;
+  background-color: white;
+}
+
+.inicioCard {
+  position: relative;
+  z-index: 1;
+}
+
+.inicioCard:hover .circle {
+  transition: 0.2s;
+  height: 150px;
+  width: 150px;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  z-index: -1;
+  filter: blur(68px);
+  transition: 0.2s;
+}
+#bulbasaurCircle {
+  background: #88b68a;
+}
+
+#charmanderCircle {
+  background: #e9ab7d;
+}
+
+#pikachuCircle {
+  background: #decc78;
+}
+
+#squirtleCircle {
+  background: #669fb1;
+}
+
+/* FIN SECTION INICIO */
+
+.destacadasCard {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.imgCard{
+  width: 200px;
+}
+
+.bkgCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.1);
+  filter: blur(5px);
+  z-index: -1;
+}
+
+.cartBtn {
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  border: #ffffff solid 2px;
+}
+
+.cartBtn:hover {
+  background-color: white;
+  color: black;
+}
+
+.price {
+  background-color: white;
+  height: 30px;
+  border-radius: 5px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.infoContainer {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#inicioSection,
+#contactoSection,
+#cartasSection {
+  padding: 50px;
+}
+
+#contactoSection {
+  padding-top: 0;
+}
+
+@media (max-width: 1200px) {
+  #squirtleCard {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  #pikachuCard {
+    display: none;
+  }
+
+  #inicioSection h1 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  #inicioSection h1 {
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 620px) {
+  #charmanderCard {
+    display: none;
+  }
+}
+
+@media (max-width: 532px) {
+  #inicioSection h1 {
+    font-size: 1.5em;
+  }
+}
+
+form label {
+  font-size: 14px;
+  color: white;
+  display: block;
+  margin-bottom: 1em;
+  font-weight: 600;
+}
+
+.formInput {
+  background-color: #191919;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.formInput:focus {
+  background-color: #353535;
+  color: white;
+}
+
+input {
+  height: 40px;
+}
+
+textarea {
+  height: 140px;
+}
+
+select{
+  background-color: #191919 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btnSubmit {
+  padding: 5px 40px;
+  background-color: white;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+#contactoSection .container {
+  max-width: 700px;
+}
+
+footer {
+  padding: 50px 0;
+  background: rgba(35, 35, 35, 0.66);
+  width: 100%;
+  margin-top: auto;
+}
+
+.loginBtn {
+  background-color: #aedaee;
+  color: black !important;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.loginBtn:hover {
+  background-color: #95bcce;
+  transition: 0.2s;
+  color: black !important;
+}
+
+.logoutBtn {
+  background-color: #eeaeae;
+  color: black !important;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.logoutBtn:hover {
+  background-color: #ff7676 !important;
+  transition: 0.2s;
+  color: black !important;
+}
+
+/* Login page */
+
+#login h1,
+#register h1 {
+  font-weight: 700;
+  font-size: 3em;
+}
+
+.urlLink {
+  color: white;
+  text-decoration: none;
+}
+
+.bkgCircle {
+  position: absolute;
+  bottom: 0;
+  height: 200px;
+  width: 200px;
+  filter: blur(68px);
+  z-index: -1;
+}
+
+#bkgCircleOrange {
+  right: 0;
+  background: #e9ab7d;
+}
+#bkgCircleGreen {
+  right: 200px;
+  background: #b2ffe3;
+}
+
+#register form,
+#login form {
+  max-width: 400px;
+}
+
+#carouselExampleIndicators button {
+  border-radius: 50%;
+  width: 9px;
+  height: 9px;
+}
+
+#carouselExampleIndicators {
+  width: 100%;
+  max-width: 950px;
+}
+
+.carousel {
+  position: unset;
+}
+
+.carousel-indicators {
+  position: relative;
+}
+
+.cardContainer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contenedor{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardContainer img {
+  max-width: 200px;
+}
+
+.dropdown-center button{
+  min-width: 100%;
+  background-color: white;
+  color: black;
+  font-weight: 500;
+}
+
+.dropdown-center button:hover{
+  background-color: rgb(214, 214, 214);
+  color: black;
+}
+
+#searchMenu{
+  width: 100%;
+  max-width: 950px;
+}
+
+.cartItem{
+  background-color: #232323;
+  max-width: 800px;
+  border-radius: 5px;
+}
+
+.imgCarta{
+  max-width: 130px;
+}
+
+.eliminarBtn{
+  color: #E9AB7D;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  background: #634936;
+  border-radius: 2px;
+  margin: 0;
+  padding: 2px 10px;
+  height: fit-content;
+  margin-top: 10px;
+}
+
+.energia{
+  width: 25px;
+}
+
+.nombreCarta {
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.nombreCarta::first-letter {
+  text-transform: uppercase;
+}
+
+.poder{
+font-weight: 500;
+font-size: 24px;
+}
+
+.poderSize{
+  font-size: 18px;
+}
+
+.comprarBtn{
+  background-color: white;
+  color: black;
+  height: fit-content;
+  font-weight: 500;
+  border-radius: 8px;
+  width: 100%;
+  padding: 1em;
+}
+
+.comprarContainer{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.table{
+  max-width: 984px;
+}
+
+td a{
+  text-decoration: none;
+}
+
+#panel .container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.table-custom tr:nth-child(odd) {
+  background-color: black !important;
+}
+
+.table-custom tr:nth-child(even) {
+  background-color: #1e1e1e !important;
+}
+.table{
+--bs-table-color: none;
+--bs-table-bg: none;
+border-radius: 20px;
+border: 1px solid #1e1e1e;
+}
+
+#addCardBtn{
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  border-radius: 10px;
+  padding: 0.5em;
+}
+
+.buttonSubmit{
+width: 100%;
+background-color: white;
+color: black;
+border-radius: 4px;
+font-weight: 600;
+font-size: 18px;
+transition: 0.2s;
+}
+
+.buttonSubmit:hover{
+background-color: rgb(209, 209, 209);
+transition: 0.2s;
+color: black;
+}
+
+#agregarItem .container, #modificarItem .container{
+  max-width: 400px;
+}
+
+
